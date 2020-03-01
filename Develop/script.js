@@ -50,41 +50,22 @@ var confirmSymbol = confirm('Do you want symbols in your passwords? Press "OK" f
  
 function generateCharactersType() {
   var charactersType = "";
-  if (confirmLower === true && confirmNumber === true && confirmSymbol === true && confirmUpper === true) {
-    return charactersType = randomLower + randomNumber + randomSymbol + randomUpper;
-  } else if (confirmLower === true && confirmNumber === true && confirmSymbol === true) {
-    return charactersType = randomLower + randomNumber + randomSymbol;
-  } else if (confirmLower === true && confirmNumber === true) {
-    return charactersType = randomLower + randomNumber;
-  } else if (confirmLower === true) {
-    return charactersType = randomLower;
-  } else if (confirmLower === true && confirmSymbol === true && confirmUpper === true) {
-    return charactersType = randomLower + randomSymbol + randomUpper;
-  } else if (confirmLower === true && confirmSymbol === true) {
-    return charactersType = randomLower + randomSymbol;
-  } else if (confirmLower === true && confirmUpper === true) {
-    return charactersType = randomLower + randomUpper;
-  } else if (confirmNumber === true && confirmSymbol === true && confirmUpper === true) {
-    return charactersType = randomNumber + randomSymbol + randomUpper;
-  } else if (confirmNumber === true && confirmSymbol === true) {
-    return charactersType = randomNumber + randomSymbol;
-  } else if (confirmNumber === true) {
-    return charactersType = randomNumber;
-  } else if (confirmNumber === true && confirmUpper === true) {
-    return charactersType = randomNumber + randomUpper;
-  } else if (confirmUpper === true) {
-    return charactersType = randomUpper;
-  } else if (confirmUpper === true && confirmSymbol === true) {
-    return charactersType = randomUpper + randomSymbol;
-  } else if (confirmSymbol === true){
-    return charactersType = randomSymbol;
-  } else {
-    return alert('You must choose at least on character type') + document.location.reload();
+  if (confirmLower === true){
+    charactersType = charactersType + randomLower;
+  }if (confirmUpper === true){
+    charactersType = charactersType + randomUpper;
+  }if (confirmNumber === true){
+    charactersType = charactersType + randomNumber;
+  }if (confirmSymbol === true) {
+    charactersType = charactersType + randomSymbol;
+  }if (confirmLower === false && confirmUpper === false && confirmNumber === false && confirmSymbol === false){
+    return alert('You must choose at least one character type') + document.location.reload();
   }
+  return charactersType;
 }
 
 //Store user preference into a variable
-var charactersType = generateCharactersType ();
+var charactersType = generateCharactersType();
 
 
 
